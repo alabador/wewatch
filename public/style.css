@@ -32,6 +32,15 @@ ul {
     display: none;
 }
 
+
+/* Form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+
 /* Wishlist Grid */
 .watchlist {
     display: grid;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const showSchema = new mongoose.Schema({
+const animeSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -16,7 +16,6 @@ const showSchema = new mongoose.Schema({
     episodes: {
         total: {
             type: Number,
-            required: true,
         },
         watched: {
             type: Number,
@@ -25,4 +24,4 @@ const showSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Show', showSchema)
+module.exports = mongoose.model('Anime', animeSchema)
