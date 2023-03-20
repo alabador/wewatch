@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const connectDB = require('./config/database')
 const homeRoutes = require('./routes/home')
+const animeRoutes = require('./routes/anime')
 
 require('dotenv').config({path: './config/.env'});
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 // Routes
 app.use('/', homeRoutes)
+app.use('/anime', animeRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on Port ${process.env.PORT}.`)
