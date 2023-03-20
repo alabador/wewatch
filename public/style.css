@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
 
 :root {
+    --background: rgb(58, 58, 58, 1);
+    --header-bg: rgb(48, 48, 48);
+    --text-color: rgb(248, 248, 248);
     --border-color: rgb(110, 110, 110);
-    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --box-shadow: rgba(68, 72, 77, 0.2) 0px 8px 24px;
     --accent: #902923;
 }
 
@@ -19,6 +22,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
 }
 
 ul {
@@ -27,8 +31,10 @@ ul {
 }
 
 .header {
-    padding: 2rem 2rem 1rem;
-    box-shadow: var(--box-shadow);
+    padding: 1rem 2rem;
+    color: var(--text-color);
+    background-color: var(--header-bg);
+    
 }
 
 .hidden {
@@ -53,6 +59,11 @@ ul {
     border-radius: 4px;
     border: 2px solid rgb(182, 182, 182);
     background: none;
+    color: var(--text-color);
+}
+
+.input option {
+    color: var(--background);
 }
 
 .submit {
