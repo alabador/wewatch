@@ -3,6 +3,7 @@
 :root {
     --border-color: rgb(110, 110, 110);
     --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    --accent: #902923;
 }
 
 /*Reset */
@@ -12,6 +13,8 @@
 
 * {
     margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -35,11 +38,31 @@ ul {
 
 /* Form */
 .form-container {
-    display: flex;
-    justify-content: center;
     margin: 2rem 0;
+    padding: 0 2rem;
 }
 
+#search {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid rgb(182, 182, 182);
+    background: none;
+}
+
+.submit {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
+    color: white;
+    font-weight: 700;
+}
 
 /* Wishlist Grid */
 .watchlist {
@@ -75,6 +98,11 @@ ul {
 @media screen and (min-width: 900px) {
     .watchlist {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    #search {
+        flex-direction: row;
+        justify-content: center;
     }
 }
 @media screen and (min-width: 1200px) {
