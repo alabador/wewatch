@@ -1,4 +1,3 @@
-const fetch = require("node-fetch")
 const urlBaseAPI = 'https://api.jikan.moe/v4/anime'
 
 //Use url query params and Jikan documentation to add more.
