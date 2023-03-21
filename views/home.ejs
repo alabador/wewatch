@@ -15,13 +15,13 @@
     <main>
         <section class="form-container">
             <form action="" method='GET' id="search">
-                <input type="text" placeholder="Search for a Show..." name='showQuery' class="input">
+                <input type="text" placeholder="Search for a Show..." name='showQuery' class="input" id="showName">
                 <select name="showType" id="showType" class="input" required>
                     <option value="">Show Genre?</option>
-                    <option value="/anime/search">Anime</option>
-                    <option value="/tv/search">TV</option>
+                    <option value="/anime/search/">Anime</option>
+                    <option value="/tv/search/">TV</option>
                 </select>
-                <input type="submit" class="submit">
+                <input type="submit" class="submit" id="home-submit">
             </form>
         </section>
     </main>

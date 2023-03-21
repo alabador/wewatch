@@ -4,5 +4,7 @@ const animeController = require('../controllers/anime')
 
 router.get('/search', animeController.getAnimeResults)
 
+router.get('/search/:name', animeController.getAnimeSearchResults)
+
 module.exports = router
 
