@@ -2,13 +2,19 @@ const select = document.querySelector('#showType')
 const form = document.querySelector('#search')
 const showName = document.querySelector('#showName')
 
+let show, newRoute;
+let formAction = '';
+
+showName.addEventListener('change', function(e){
+    show = showName.value;
+})
+
 select.addEventListener('change', function(e){
-    let newRoute = e.target.value;
-    let show = showName.value;
-    form.action = newRoute + show;
+    newRoute = e.target.value;
 })
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    window.location.href = form.action;
+    formAction = newRoute + show
+    window.location.href = formAction;
 })
