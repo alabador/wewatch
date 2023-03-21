@@ -1,3 +1,4 @@
+const fetch = require("node-fetch")
 const urlBaseAPI = 'https://api.jikan.moe/v4/anime'
 
 //Use url query params and Jikan documentation to add more.
@@ -9,7 +10,6 @@ async function searchByName(name) {
         throw new Error("cannot fetch data")
     }
     let data = await response.json()
-    console.log(data)
     return data;
 }
 

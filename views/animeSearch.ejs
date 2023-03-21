@@ -21,6 +21,16 @@
         </form>
     </section>
 
+    <ul class="watchlist">
+        <% searchResults.forEach(el => { %>
+            <li class="show">
+                <span class="show-title"><%= el.title %></span>
+                <div>
+                    <!-- <button class="delete" data-id="">Delete</button> -->
+                </div>
+            </li>
+        <%})%>
+    </ul>
     <script src="/index.js"></script>
 </body>
 </html>
