@@ -37,6 +37,13 @@ ul {
     
 }
 
+.header-title {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
 .hidden {
     display: none;
 }
@@ -92,11 +99,13 @@ ul {
     /* border: 1px solid var(--border-color); */
     padding: 2rem;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: 1px solid var(--border-color);
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 }
 
 .show-title {
     font-size: 1.5rem;
+    color: var(--text-color);
 }
 
 /*Media Queries*/
