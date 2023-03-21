@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search for Anime</title>
+    <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
     <section class="form-container">
@@ -18,5 +20,17 @@
             <input type="submit" class="submit" id="home-submit">
         </form>
     </section>
+
+    <ul class="watchlist">
+        <% searchResults.forEach(el => { %>
+            <li class="show">
+                <span class="show-title"><%= el.title %></span>
+                <div>
+                    <!-- <button class="delete" data-id="">Delete</button> -->
+                </div>
+            </li>
+        <%})%>
+    </ul>
+    <script src="/index.js"></script>
 </body>
 </html>
