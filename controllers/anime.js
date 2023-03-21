@@ -1,3 +1,5 @@
+const AnimeAPI = require("../models/api/Anime")
+
 module.exports = {
     getAnimeResults: (req,res)=>{
         console.log('apple')
@@ -6,6 +8,8 @@ module.exports = {
     getAnimeSearchResults: async (req, res) => {
         console.log('banana')
         let show = req.params.name;
-        res.send(`Anime ${show}`);
+        res.render('animeSearch.ejs', {
+            searchResults: AnimeAPI.searchByName(show).data,
+        });
     },
 }
