@@ -27,9 +27,11 @@
     <ul class="watchlist">
         <% searchResults.forEach(el => { %>
             <li class="show">
-                <span class="show-title"><%= el.title %></span>
-                <div>
-                    <!-- <button class="delete" data-id="">Delete</button> -->
+                <img src="<%= el.images.jpg.image_url %>" alt="" class="show-image">
+                <div class="show-info">
+                    <h3 class="show-title"><%= el.title %></h3>
+                    <p><%= el.type %> | Episodes: <%= el.episodes %> | <%= el.status %> </p>
+                    <p>Rating: <%= el.score %> / 10</p>
                 </div>
             </li>
         <%})%>
