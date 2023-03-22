@@ -3,19 +3,48 @@ const shows = document.querySelectorAll('.show');
 shows.forEach(show => {
     show.addEventListener('click', function(e) {
         if(e.target.classList.contains('add-show')) {
-            const id = e.target.parentNode.dataset.id;
-            // const name = e.target.
-            addToWatchlist();
+            addToWatchlist(show);
         }
     })
 })
 
 //to do: take a look at leon class 45, start at 3:19:00
 
-//rough summary
-//1. get text or data-id from parent
-//2. fetch and send in body json stringify (look in vid)
 
-async function addToWatchlist() {
+async function addToWatchlist(show) {
+    const id = show.dataset.id;
+    const name = show.querySelector('.show-title').textContent
+    const imageUrl = show.querySelector('.show-image').src
+    const showStatus = show.querySelector('.show-status').textContent
+    const episodeCount = show.querySelector('.show-episodes-number').textContent
     
+    try {
+        const response = await fetch('/anime/add', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'showId': id,
+                'showName': name,
+                'showImage' : imageUrl,
+                'showStatus' : showStatus,
+                'showEpisodes' : episodeCount,
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    } catch (error) {
+        console.log(error)
+    }
+
 }
+
+// function addToWatchlist(show) {
+//     const id = show.dataset.id;
+//     const name = show.querySelector('.show-title').textContent
+//     const imageUrl = show.querySelector('.show-image').src
+//     const showStatus = show.querySelector('.show-status').textContent
+//     const episodeCount = show.querySelector('.show-episodes-number').textContent
+
+//     console.log(name, id, imageUrl, showStatus, episodeCount);
+// }

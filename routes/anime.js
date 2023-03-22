@@ -6,5 +6,7 @@ router.get('/search', animeController.getAnimeResults)
 
 router.get('/search/:name', animeController.getAnimeSearchResults)
 
+router.post('/add', animeController.addToList)
+
 module.exports = router
 
