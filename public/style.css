@@ -78,11 +78,27 @@ ul {
     border-radius: 4px;
     border: 2px solid var(--accent);
     background-color: var(--accent);
-    color: white;
+    color: var(--text-color);
     font-weight: 700;
 }
 
-/* Wishlist Grid */
+/* Watchlist home */
+
+.watchlist-title {
+    display: flex;
+    justify-content: center;
+    color: var(--text-color)
+}
+
+
+
+
+
+
+
+
+
+/* Watchlist Grid */
 .watchlist {
     display: grid;
     grid-template-columns: 1fr;
