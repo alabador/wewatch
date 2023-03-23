@@ -91,19 +91,12 @@ ul {
 }
 
 
-
-
-
-
-
-
-
 /* Watchlist Grid */
 .watchlist {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px 20px;
-    padding: 5% 10% 0;
+    padding: 5% 10%;
 
 }
 
@@ -111,13 +104,12 @@ ul {
     display: block;
 }
 
-.show {
+.home-show {
     padding: 2rem;
     border-radius: 4px;
     border: 1px solid var(--border-color);
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
 }
 
 .show-title {
@@ -125,25 +117,52 @@ ul {
     color: var(--text-color);
 }
 
-.show-image {
-    width: 100%;
-    /* height: 200px;
-    object-fit: cover; */
+.home-show-image {
+    height: 200px;
+    /* object-fit: cover; */
 }
 
-.show-info {
+.show-info, .home-show-info {
     color: var(--text-color);
 }
+
+
+/* Searchlist Grid */
+.searchlist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 20px;
+    padding: 5% 10%;
+
+}
+
+.update-show {
+    display: block;
+}
+
+.show-image {
+    width: 100%;
+}
+
+.show {
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 /*Media Queries*/
 
 @media screen and (min-width: 600px) {
-    .watchlist {
+    .searchlist {
         grid-template-columns: 1fr 1fr;
     }
 }
 @media screen and (min-width: 900px) {
-    .watchlist {
+    .searchlist {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -154,6 +173,10 @@ ul {
 }
 @media screen and (min-width: 1200px) {
     .watchlist {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .searchlist {
         grid-template-columns: repeat(4, 1fr);
     }
 }

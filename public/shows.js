@@ -38,13 +38,3 @@ async function addToWatchlist(show) {
     }
 
 }
-
-// function addToWatchlist(show) {
-//     const id = show.dataset.id;
-//     const name = show.querySelector('.show-title').textContent
-//     const imageUrl = show.querySelector('.show-image').src
-//     const showStatus = show.querySelector('.show-status').textContent
-//     const episodeCount = show.querySelector('.show-episodes-number').textContent
-
-//     console.log(name, id, imageUrl, showStatus, episodeCount);
-// }
