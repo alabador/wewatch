@@ -4,6 +4,7 @@ shows.forEach(show => {
     show.addEventListener('click', function(e) {
         if(e.target.classList.contains('add-show')) {
             addToWatchlist(show);
+            window.location.href = window.location.origin;
         }
     })
 })
@@ -31,8 +32,7 @@ async function addToWatchlist(show) {
             })
         })
         const data = await response.json()
-        console.log(data)
-        location.reload()
+        
     } catch (error) {
         console.log(error)
     }
