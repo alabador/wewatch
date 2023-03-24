@@ -110,6 +110,7 @@ ul {
     border: 1px solid var(--border-color);
     display: flex;
     gap: 2rem;
+    position: relative;
 }
 
 .show-title {
@@ -122,8 +123,28 @@ ul {
     /* object-fit: cover; */
 }
 
+.home-delete {
+    background: none;
+    border: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+}
+
+.fa-trash {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.fa-trash:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
 .show-info, .home-show-info {
     color: var(--text-color);
+    padding: 0.5rem;
 }
 
 
