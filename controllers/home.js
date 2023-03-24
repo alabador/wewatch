@@ -11,8 +11,12 @@ module.exports = {
     },
     deleteShow: async (req, res) => {
         try {
-            console.log('this works for now')
-            // await Anime.findOneAndDelete({})
+            // console.log('this works for now')
+            await Anime.findOneAndDelete({
+                id: req.body.showId,
+            })
+            console.log('Show has been deleted.')
+            res.redirect('/')
         } catch (error) {
             console.log(error)
         }
