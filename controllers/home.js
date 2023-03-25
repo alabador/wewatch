@@ -2,12 +2,8 @@ const Anime = require("../models/db/Anime")
 
 module.exports = {
     getHome: async (req,res)=>{
-        try{
-            const shows = await Anime.find()
-            res.render('home.ejs', {shows: shows})
-        } catch(error){
-            console.log(error)
-        }
+        const shows = await Anime.find()
+        res.render('home.ejs', {shows: shows})
     },
     deleteShow: async (req, res) => {
         try {
