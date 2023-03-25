@@ -46,7 +46,6 @@ async function deleteFromWatchlist(show) {
             })
         })
         const data = await response.json()
-        location.reload()
         
     } catch (error) {
         console.log(error)
