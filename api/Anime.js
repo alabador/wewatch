@@ -7,7 +7,7 @@ async function searchByName(name) {
     const fName = encodeURIComponent(name.trim())
     const response = await fetch(`${urlBaseAPI}?q=${fName}&limit=10`)
     if(response.status !== 200) {
-        throw new Error("cannot fetch data")
+        throw new Error(`cannot fetch data, response status: ${response.status}`)
     }
     let data = await response.json()
     return data;

@@ -129,30 +129,46 @@ ul {
     /* object-fit: cover; */
 }
 
-.home-delete {
-    background: none;
-    border: white;
+.show-actions {
     position: absolute;
     right: 0;
     top: 0;
     padding: 2rem 1rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--header-bg);
 }
 
-.fa-trash {
+.home-delete, .home-add, .home-minus {
+    background: none;
+    border: none;
+}
+
+.home-show-info .show-episodes {
+    font-size: 1.2rem;
+}
+
+.fa-trash, .fa-plus, .fa-minus {
     color: var(--text-color);
     font-size: 1.5rem;
 }
 
-.fa-trash:hover {
+.fa-trash:hover, .fa-plus:hover, .fa-minus:hover {
     color: var(--accent);
     cursor: pointer;
 }
 
 .show-info, .home-show-info {
     color: var(--text-color);
-    padding: 0.5rem;
+    padding: 0 1rem 0.5rem 0.5rem;
 }
 
+.home-show-info {
+    margin-right: 1rem;
+}
 
 /* Searchlist Grid */
 .searchlist {
