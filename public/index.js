@@ -29,16 +29,15 @@ shows.forEach(show => {
         if(e.target.classList.contains('fa-trash') || e.target.classList.contains('home-delete')) {
             // console.log('test')
             deleteFromWatchlist(show);
-            window.location.href = window.location.origin;
+            window.location.reload()
+            
         }
         if(e.target.classList.contains('fa-plus') || e.target.classList.contains('home-add')) {
             increaseEpisodeCount(show)
-            window.location.href = window.location.origin;
 
         }
         if(e.target.classList.contains('fa-minus') || e.target.classList.contains('home-minus')) {
             decreaseEpisodeCount(show)
-            window.location.href = window.location.origin;
         }
     })
 })
@@ -55,7 +54,6 @@ async function deleteFromWatchlist(show) {
             })
         })
         const data = await response.json()
-        
     } catch (error) {
         console.log(error)
     }
@@ -74,7 +72,7 @@ async function increaseEpisodeCount(show) {
             })
         })
         const data = await response.json()
-        
+        window.location.reload()
     } catch (error) {
         console.log(error)
     }
@@ -91,7 +89,7 @@ async function decreaseEpisodeCount(show) {
             })
         })
         const data = await response.json()
-        
+        window.location.reload()
     } catch (error) {
         console.log(error)
     }
