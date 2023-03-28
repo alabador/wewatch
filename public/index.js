@@ -31,6 +31,15 @@ shows.forEach(show => {
             deleteFromWatchlist(show);
             window.location.href = window.location.origin;
         }
+        if(e.target.classList.contains('fa-plus') || e.target.classList.contains('home-add')) {
+            increaseEpisodeCount(show)
+            window.location.href = window.location.origin;
+
+        }
+        if(e.target.classList.contains('fa-minus') || e.target.classList.contains('home-minus')) {
+            decreaseEpisodeCount(show)
+            window.location.href = window.location.origin;
+        }
     })
 })
 
@@ -51,4 +60,39 @@ async function deleteFromWatchlist(show) {
         console.log(error)
     }
 
+}
+
+async function increaseEpisodeCount(show) {
+    const id = show.dataset.id;
+    
+    try {
+        const response = await fetch('/increase', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'showId': id,
+            })
+        })
+        const data = await response.json()
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+async function decreaseEpisodeCount(show) {
+    const id = show.dataset.id;
+    
+    try {
+        const response = await fetch('/decrease', {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                'showId': id,
+            })
+        })
+        const data = await response.json()
+        
+    } catch (error) {
+        console.log(error)
+    }
 }
