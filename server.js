@@ -19,6 +19,7 @@ app.use(express.json());
 app.use('/', homeRoutes)
 app.use('/anime', animeRoutes)
 
+
 connectDB().then(() => {
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on Port ${process.env.PORT}.`)
