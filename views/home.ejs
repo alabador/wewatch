@@ -32,7 +32,9 @@
             <ul class="watchlist">
                 <% shows.forEach(el => { %>
                     <li class="home-show" data-id="<%= el.id %>">
-                        <img src="<%= el.imageURL %>" alt="" class="home-show-image">
+                        <div class="home-show-image-container">
+                            <img src="<%= el.imageURL %>" alt="" class="home-show-image">
+                        </div>
                         <div class="home-show-info">
                             <h3 class="show-title"><%= el.name %></h3>
                             <p class="show-status"><%= el.status %> </p>

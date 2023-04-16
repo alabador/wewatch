@@ -216,6 +216,10 @@ ul {
         display: block;
         padding-bottom: 4rem;
     }
+    .home-show-image-container {
+        width: 100%;
+        text-align: center;
+    }
     .show-actions {
         top: auto;
         right: auto;
