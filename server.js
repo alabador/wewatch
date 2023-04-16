@@ -7,7 +7,7 @@ const animeRoutes = require('./routes/anime')
 require('dotenv').config({path: './config/.env'});
 
 // Connect to DB
-// connectDB()
+connectDB()
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -19,9 +19,6 @@ app.use(express.json());
 app.use('/', homeRoutes)
 app.use('/anime', animeRoutes)
 
-
-connectDB().then(() => {
-    app.listen(process.env.PORT, () => {
-        console.log(`Server is running on Port ${process.env.PORT}.`)
-    })
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on Port ${process.env.PORT}.`)
 })
