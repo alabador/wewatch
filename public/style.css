@@ -211,7 +211,22 @@ ul {
 
 
 /*Media Queries*/
-
+@media screen and (max-width: 599px) {
+    .home-show {
+        display: block;
+        padding-bottom: 4rem;
+    }
+    .show-actions {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+}
 @media screen and (min-width: 600px) {
     .searchlist {
         grid-template-columns: 1fr 1fr;
