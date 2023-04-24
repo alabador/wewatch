@@ -26,6 +26,10 @@ const animeSchema = new mongoose.Schema({
             default: 0,
         } 
     },
+    userId: {
+        type: String,
+        required: true
+    },
 })
 
 module.exports = mongoose.model('Anime', animeSchema)

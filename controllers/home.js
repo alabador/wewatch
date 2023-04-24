@@ -2,7 +2,8 @@ const Anime = require("../models/db/Anime")
 
 module.exports = {
     getHome: async (req,res)=>{
-        const shows = await Anime.find()
+        // const shows = await Anime.find()
+        const shows = await Anime.find({userId:req.user.id})
         res.render('home.ejs', {shows: shows})
     },
     deleteShow: async (req, res) => {

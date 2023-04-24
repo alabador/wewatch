@@ -22,6 +22,7 @@ module.exports = {
                 episodes: {
                     total: req.body.showEpisodes,
                 },
+                userId: req.user.id,
             })
             console.log('Show has been added!')
             res.redirect('/') //once you do this, the get request from the home route should trigger
