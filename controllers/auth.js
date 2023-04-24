@@ -73,24 +73,53 @@ const User = require('../models/db/User')
       email: req.body.email,
       password: req.body.password
     })
-  
+    
+    // User.findOne({$or: [
+    //   {email: req.body.email},
+    //   {userName: req.body.userName}
+    // ]}, (err, existingUser) => {
+    //   if (err) { return next(err) }
+    //   if (existingUser) {
+    //     req.flash('errors', { msg: 'Account with that email address or username already exists.' })
+    //     return res.redirect('../signup')
+    //   }
+    //   user.save((err) => {
+    //     if (err) { return next(err) }
+    //     req.logIn(user, (err) => {
+    //       if (err) {
+    //         return next(err)
+    //       }
+    //       res.redirect('/home')
+    //     })
+    //   })
+    // })
+
     User.findOne({$or: [
       {email: req.body.email},
       {userName: req.body.userName}
-    ]}, (err, existingUser) => {
-      if (err) { return next(err) }
+    ]})
+    .then(existingUser => {
       if (existingUser) {
-        req.flash('errors', { msg: 'Account with that email address or username already exists.' })
-        return res.redirect('../signup')
+        req.flash('errors', { msg: 'Account with that email address or username already exists.' });
+        return res.redirect('../signup');
       }
-      user.save((err) => {
-        if (err) { return next(err) }
-        req.logIn(user, (err) => {
-          if (err) {
-            return next(err)
-          }
-          res.redirect('/home')
-        })
-      })
+      return user.save();
     })
+    .then(() => {
+      return new Promise((resolve, reject) => {
+        req.logIn(user, err => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        });
+      });
+    })
+    .then(() => {
+      res.redirect('/home');
+    })
+    .catch(err => {
+      next(err);
+    });
   }

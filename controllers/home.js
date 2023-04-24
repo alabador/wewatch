@@ -7,7 +7,7 @@ module.exports = {
     getHome: async (req,res)=>{
         // const shows = await Anime.find()
         const shows = await Anime.find({userId:req.user.id})
-        res.render('home.ejs', {shows: shows})
+        res.render('home.ejs', {shows: shows, user: req.user})
     },
     deleteShow: async (req, res) => {
         try {
