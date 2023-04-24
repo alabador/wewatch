@@ -1,6 +1,9 @@
 const Anime = require("../models/db/Anime")
 
 module.exports = {
+    getLanding: async(req, res) => {
+        res.render('landing.ejs')
+    },
     getHome: async (req,res)=>{
         // const shows = await Anime.find()
         const shows = await Anime.find({userId:req.user.id})
