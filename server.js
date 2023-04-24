@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose') //helps us use models, better interaction with db
 const passport = require('passport') //helps us with auth, has strategies for different types of auth
 const session = require('express-session') // cookies - allows us to keep users logged in
-const MongoStore = require('connect-mongo')(session) //allows us to store session in mongodb
+const MongoStore = require('connect-mongo') //allows us to store session in mongodb
 const flash = require('express-flash') //flashes a message when validation fails
 const logger = require('morgan') //helps log all the requests in terminal
 const connectDB = require('./config/database')
@@ -30,7 +30,9 @@ app.use(
       secret: 'keyboard cat',
       resave: false,
       saveUninitialized: false,
-      store: new MongoStore({ mongooseConnection: mongoose.connection }),
+      store: MongoStore.create({
+        mongoUrl: process.env.DB_STRING
+      }),
     })
   )
 
