@@ -6,7 +6,7 @@ module.exports = {
     },
     getHome: async (req,res)=>{
         // const shows = await Anime.find()
-        const shows = await Anime.find({userId:req.user.id})
+        const shows = await Anime.find({userId:req.user.id}) //find all docs created by user
         res.render('home.ejs', {shows: shows, user: req.user})
     },
     deleteShow: async (req, res) => {
@@ -14,9 +14,10 @@ module.exports = {
             // console.log('this works for now')
             await Anime.findOneAndDelete({
                 id: req.body.showId,
+                userId: req.user.id,
             })
             console.log('Show has been deleted.')
-            res.redirect('/')
+            res.redirect('/home')
         } catch (error) {
             console.log(error)
         }

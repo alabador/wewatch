@@ -46,7 +46,7 @@ async function deleteFromWatchlist(show) {
     const id = show.dataset.id;
     
     try {
-        const response = await fetch('/', {
+        const response = await fetch('/home', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

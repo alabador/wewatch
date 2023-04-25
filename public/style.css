@@ -34,7 +34,8 @@ ul {
     padding: 1rem 2rem;
     color: var(--text-color);
     background-color: var(--header-bg);
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-title {

@@ -7,7 +7,7 @@ module.exports = {
         res.render('animeSearch.ejs')
     },
     getAnimeSearchResults: async (req, res) => {
-        let show = req.params.name;
+        let show = req.params.name; //gets the name from the request url, created in index.js event listener
         // res.send(`Anime ${show}`)
         const apiData = await animeAPI.searchByName(show)
         res.render('animeSearch.ejs', {searchResults: apiData.data})
@@ -25,7 +25,7 @@ module.exports = {
                 userId: req.user.id,
             })
             console.log('Show has been added!')
-            res.redirect('/') //once you do this, the get request from the home route should trigger
+            res.redirect('/home') 
             
         }catch(err){
             console.log(err)
