@@ -4,7 +4,7 @@ showResults.forEach(show => {
     show.addEventListener('click', function(e) {
         if(e.target.classList.contains('add-show')) {
             addToWatchlist(show);
-            window.location.href = window.location.origin;
+            window.location.href = '/home'
         }
     })
 })
@@ -18,7 +18,7 @@ async function addToWatchlist(show) {
     const imageUrl = show.querySelector('.show-image').src
     const showStatus = show.querySelector('.show-status').textContent
     const episodeCount = show.querySelector('.show-episodes-number').textContent
-    console.log('1')
+    // console.log('1')
     try {
         const response = await fetch('/anime/add', {
             method: 'post',
@@ -31,9 +31,8 @@ async function addToWatchlist(show) {
                 'showEpisodes' : episodeCount,
             })
         })
-        console.log('2')
+        // console.log('2')
         const data = await response.json()
-        
     } catch (error) {
         console.log(error)
     }
