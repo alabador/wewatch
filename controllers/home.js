@@ -24,7 +24,11 @@ module.exports = {
     },
     increaseCount: async (req, res) => {
         try {
-            await Anime.findOneAndUpdate({id: req.body.showId}, {
+            await Anime.findOneAndUpdate({
+                id: req.body.showId,
+                userId: req.user.id,
+            }, 
+            {
                 $inc: {'episodes.watched' : 1}
             })
             console.log('Show count increased!')
@@ -35,7 +39,11 @@ module.exports = {
     },
     decreaseCount: async (req, res) => {
         try {
-            await Anime.findOneAndUpdate({id: req.body.showId}, {
+            await Anime.findOneAndUpdate({
+                id: req.body.showId,
+                userId: req.user.id,
+            }, 
+            {
                 $inc: {'episodes.watched' : -1}
             })
             console.log('Show count decreased!')
