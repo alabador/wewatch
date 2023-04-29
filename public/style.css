@@ -95,7 +95,49 @@ ul {
     text-decoration: none;
 }
 
-/* Form */
+/* Signup + Login */
+.login-page, .signup-page {
+    position: relative;
+    background-image: url(./images/backpacker-jensenart.jpg);
+    /* Image by <a href="https://pixabay.com/users/jensenartofficial-31380959/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Jensen Art Co</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Pixabay</a> */
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.login-form, .signup-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 5% 10%;
+}
+
+.login-form input, .signup-form input {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid rgb(182, 182, 182);
+    background: none; 
+    color: var(--text-color);
+}
+
+.login-form input[type="submit"], .signup-form input[type="submit"]{
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.login-form input[type="submit"]:hover, .signup-form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+
+/* Form for Home + Search */
 .form-container {
     margin: 2rem 0;
     padding: 0 2rem;
@@ -293,6 +335,9 @@ ul {
     }
     .landing-info h2 {
         padding: 1rem 15%;
+    }
+    .login-form, .signup-form{
+        padding: 5% 20%;
     }
 }
 @media screen and (min-width: 1200px) {
