@@ -64,7 +64,7 @@ async function increaseEpisodeCount(show) {
     const id = show.dataset.id;
     
     try {
-        const response = await fetch('/increase', {
+        const response = await fetch('/home/increase', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -81,7 +81,7 @@ async function decreaseEpisodeCount(show) {
     const id = show.dataset.id;
     
     try {
-        const response = await fetch('/decrease', {
+        const response = await fetch('/home/decrease', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
