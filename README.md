@@ -1,7 +1,7 @@
 # wewatch
 A shared show watch list using Mongoose, Express, Node.js and EJS.
 
-[WeWatch](https://wewatch.cyclic.app/)
+[WeWatch](https://wewatch-j12y.onrender.com)
 
 ## How It's Built
 - Node.js | Express.js | MongoDB/Mongoose | EJS
@@ -15,7 +15,7 @@ A shared show watch list using Mongoose, Express, Node.js and EJS.
 npm install
 ```
 
-2. To connect to your own databatase, reate a .env file in the config folder. 
+2. To connect to your own databatase, create a .env file in the config folder. 
 Inside this .env file (/config > .env), add your port and database connection string.
 ```
 PORT = {insert port # here}
