@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+:root {
+    --background: rgb(58, 58, 58, 1);
+    --header-bg: rgb(48, 48, 48);
+    --text-color: rgb(248, 248, 248);
+    --border-color: rgb(110, 110, 110);
+    --box-shadow: rgba(68, 72, 77, 0.2) 0px 8px 24px;
+    --accent: #902923;
+}
+
+/*Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.header {
+    padding: 1rem 2rem;
+    color: var(--text-color);
+    background-color: var(--header-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.hidden {
+    display: none;
+}
+
+.header-links{
+    display: flex;
+    gap: 12px;
+}
+
+.header a {
+    color: var(--text-color);
+}
+
+/* Landing Pages + Login/Signup */
+
+.landing {
+    padding: 5% 10%;
+    position: relative;
+    background-image: url(./images/sunset-jensenart.jpg);
+    /* Image by <a href="https://pixabay.com/users/jensenartofficial-31380959/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Jensen Art Co</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Pixabay</a> */
+    height: calc(100vh - 67px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.landing-info {
+    color: var(--background);
+    margin-bottom: 2rem;
+}
+
+.landing-info h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+.landing-info h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 1rem 10%;
+}
+.landing-cta {
+    padding: 1rem; 
+    background-color: var(--accent);
+    color: var(--text-color);
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+/* Signup + Login */
+.login-page, .signup-page {
+    position: relative;
+    background-image: url(./images/backpacker-jensenart.jpg);
+    /* Image by <a href="https://pixabay.com/users/jensenartofficial-31380959/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Jensen Art Co</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7628294">Pixabay</a> */
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.login-form, .signup-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 5% 10%;
+}
+
+.login-form input, .signup-form input {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid rgb(182, 182, 182);
+    background: none; 
+    color: var(--text-color);
+}
+
+.login-form input[type="submit"], .signup-form input[type="submit"]{
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.login-form input[type="submit"]:hover, .signup-form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+
+/* Form for Home + Search */
+.form-container {
+    margin: 2rem 0;
+    padding: 0 2rem;
+}
+
+#search {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid rgb(182, 182, 182);
+    background: none;
+    color: var(--text-color);
+}
+
+.input option {
+    color: var(--background);
+}
+
+.submit {
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.submit:hover {
+    cursor: pointer;
+}
+
+/* Watchlist home */
+
+.watchlist-title {
+    display: flex;
+    justify-content: center;
+    color: var(--text-color)
+}
+
+
+/* Watchlist Grid */
+.watchlist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 20px;
+    padding: 5% 10%;
+
+}
+
+.update-show {
+    display: block;
+}
+
+.home-show {
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    /* background-color: var(--header-bg);
+    box-shadow: var(--box-shadow); */
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+.show-title {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.home-show-image {
+    height: 200px;
+    /* object-fit: cover; */
+}
+
+.show-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2rem 1rem;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--header-bg);
+}
+
+.home-delete, .home-add, .home-minus {
+    background: none;
+    border: none;
+}
+
+.home-show-info .show-episodes {
+    font-size: 1.2rem;
+}
+
+.fa-trash, .fa-plus, .fa-minus {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.fa-trash:hover, .fa-plus:hover, .fa-minus:hover {
+    color: var(--accent);
+    cursor: pointer;
+}
+
+.show-info, .home-show-info {
+    color: var(--text-color);
+    padding: 0 1rem 0.5rem 0.5rem;
+}
+
+.home-show-info {
+    margin-right: 1rem;
+}
+
+/* Searchlist Grid */
+.searchlist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px 20px;
+    padding: 5% 10%;
+
+}
+
+.update-show {
+    display: block;
+}
+
+.show-image {
+    width: 100%;
+}
+
+.show {
+    padding: 2rem;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.add-show {
+    margin-top: auto;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 0.4rem;
+}
+
+.add-show:hover {
+    cursor: pointer;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 599px) {
+    .home-show {
+        display: block;
+        padding-bottom: 4rem;
+    }
+    .home-show-image-container {
+        width: 100%;
+        text-align: center;
+    }
+    .show-actions {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        padding: 1rem 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+}
+@media screen and (min-width: 600px) {
+    .searchlist {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 900px) {
+    .searchlist {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #search {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .landing-info h2 {
+        padding: 1rem 15%;
+    }
+    .login-form, .signup-form{
+        padding: 5% 20%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .watchlist {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .searchlist {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .landing-info h2 {
+        padding: 1rem 20%;
+    }
+}
